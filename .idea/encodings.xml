@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/common/do_config.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/gave_id.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/get_name.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config/dev.cfg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/testcases/get_account.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testcases/set_approve.py" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>
