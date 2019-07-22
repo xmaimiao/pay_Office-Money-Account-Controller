@@ -1,6 +1,5 @@
 from common.do_config import config
 def gettype(title,data):
-    title = title
     if title == "獲取部門id":
         conf_data = eval(config.get('api','groups'))
         option = "groupsid"
@@ -24,3 +23,8 @@ def getid(conf_data,data,option):
                 ids.append(id)
     config.set('api', option, str(ids))
     return ids
+
+def getaccountname(data):
+    for i in data:
+        if i["id"] == config.get('setting','accountid'):
+          return i["name"]
