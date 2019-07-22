@@ -43,10 +43,8 @@ class TestGetaccount(unittest.TestCase):
             self.do_excel.write_excel(case.id+1,actual,'PASS')
         except AssertionError as e:
             print("粗錯了！")
-            raise e                                            #沒有寫這個只會顯示用例執行次數，寫之後控制台顯示有誤信息
-
+            raise e
         if  case.title == "獲取授權碼" and resp.json()['model']['accessToken']:
-            setattr(Context,'token',resp.json()['model']['accessToken'])
             config.set('api','token',resp.json()['model']['accessToken'])
             print("打印token：{}".format(getattr(Context,'token')))
 

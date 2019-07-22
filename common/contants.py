@@ -8,5 +8,4 @@ global_dir = os.path.join(base_dir,'config/global.cfg')
 uat_dir = os.path.join(base_dir,'config/uat.cfg')
 
 dev_dir = os.path.join(base_dir,'config/dev.cfg')
-test_dir = os.path.join(base_dir,'config/test.cfg')
 print(case_dir)

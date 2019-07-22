@@ -1,4 +1,5 @@
 from common.do_config import config
+from common.context import Context
 def gettype(title,data):
     if title == "獲取部門id":
         conf_data = eval(config.get('api','groups'))
@@ -24,7 +25,7 @@ def getid(conf_data,data,option):
     config.set('api', option, str(ids))
     return ids
 
-def getaccountname(data):
+def getstatus(data):
     for i in data:
-        if i["id"] == config.get('setting','accountid'):
-          return i["name"]
+        if i["id"] == getattr(Context,'accountid'):
+          return i["status"]

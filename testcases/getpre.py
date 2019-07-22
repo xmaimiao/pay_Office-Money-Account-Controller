@@ -5,7 +5,7 @@ from common.do_http import Dohttp
 from common import contants
 from common.context import replace,Context
 from common.do_config import config
-from common.gave_id import gettype
+from common.gave_id_stutas import gettype
 @ddt
 class TestGetpre(unittest.TestCase):
     unit = unittest.TestCase()                                               #PermissionError錯誤一定是文件沒關閉
@@ -43,7 +43,7 @@ class TestGetpre(unittest.TestCase):
             raise e                                            #沒有寫這個只會顯示用例執行次數，寫之後控制台顯示有誤信息
 
         if  case.title == "獲取授權碼" and resp.json()['model']['accessToken']:
-            setattr(Context,'token',resp.json()['model']['accessToken'])
+            # setattr(Context,'token',resp.json()['model']['accessToken'])
             config.set('api','token',resp.json()['model']['accessToken'])
             print("打印token：{}".format(getattr(Context,'token')))
         elif  case.title == "获取开户结算银行、帐户、户名信息" :

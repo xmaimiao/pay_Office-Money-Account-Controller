@@ -3,7 +3,7 @@ from common.do_config import config
 import configparser
 
 class Context:
-    token =None
+    accountid =None
 
 def replace(data):
     p='#(.*?)#'
@@ -15,11 +15,15 @@ def replace(data):
             except Exception as e:
                 da = config.get('edit_ap', data_new)
         except configparser.NoOptionError as e:
-            if hasattr(Context,data_new):
-                da = str(getattr(Context,data_new))
-            else:
-                print("找不到参数信息！")
-                raise e
+            try:
+                da = config.get('setting', data_new)
+                config.set('setting','status',re.search('([a-zA-Z]+)',data_new).group(1))
+            except Exception as e:
+                if hasattr(Context,data_new):
+                    da = str(getattr(Context,data_new))
+                else:
+                    print("找不到参数信息！")
+                    raise e
         data = re.sub(p,da,data,count=1)  #查找替換，count查找替換的次數
     return data
 
