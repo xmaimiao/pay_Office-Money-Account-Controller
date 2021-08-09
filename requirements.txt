@@ -15,7 +15,7 @@ pygame==1.9.4
 PyMySQL==0.9.3
 pypiwin32==223
 pyquery==1.4.0
-pywin32==224
+pywin32==301
 requests==2.20.1
 selenium==3.141.0
 suds-jurko==0.6
